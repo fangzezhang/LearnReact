@@ -9,17 +9,13 @@ export default function UseEffectFunction() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     document.title = `You clicked ${count} times`;
-
-    // return function: 需要清除的操作, similar to componentWillUnmount:
-    return function cleanup() {
-
-    }
   //  set depends only execute effect when "count" changed:
+  //  传空数组: Effect 只运行一次(仅在组件挂载和卸载时执行)
   }, [count]);
 
   return (
     <div>
-      <p>count: {count}</p>
+      <p>Effect function count: {count}</p>
       <button onClick={changeCount}>
         click
       </button>
