@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UseEffectFunction from "./UseEffectFunction";
+import UseEffectFunctionRunOnlyOnce from "./UseEffectFunctionRunOnlyOnce";
 import UseEffectClass from "./UseEffectClass";
 
 export default class Index extends Component {
@@ -12,6 +13,7 @@ export default class Index extends Component {
     return (
       <div>
         <UseEffectFunction />
+        <UseEffectFunctionRunOnlyOnce />
         <UseEffectClass />
       </div>
     );
