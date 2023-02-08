@@ -11,7 +11,6 @@ export default function UseEffectFunctionRunOnlyOnce() {
     console.info('start');
     const id = setInterval(() => {
       setCount((c) => {
-        console.info(c);
         return c + 1;
       });
     }, 1000);
