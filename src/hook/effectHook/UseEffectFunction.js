@@ -13,7 +13,7 @@ export default function UseEffectFunction() {
   //  传空数组: Effect 只运行一次(仅在组件挂载和卸载时执行)
   }, [count]);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleClick = (event) => {
     console.info(event.target);
   };
 
