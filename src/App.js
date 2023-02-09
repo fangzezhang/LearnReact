@@ -1,11 +1,11 @@
 import React from "react";
-import './App.css';
+import './App.scss';
 import HookFunction from "./hook/HookFunction";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{maxHeight: '900px', overflowX: 'auto'}}>
         <HookFunction />
       </header>
     </div>

@@ -10,9 +10,12 @@ export default class Index extends Component {
 
   render() {
     return (
-      <div>
-        <CountClass />
-        <CountFunction />
+      <div className="box">
+        <h4>STATE HOOK</h4>
+        <div className="maxHeight">
+          <CountClass />
+          <CountFunction />
+        </div>
       </div>
     );
   }

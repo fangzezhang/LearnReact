@@ -11,10 +11,13 @@ export default class Index extends Component {
 
   render() {
     return (
-      <div>
-        <UseEffectFunction />
-        <UseEffectFunctionRunOnlyOnce />
-        <UseEffectClass />
+      <div className="box" style={{ marginTop: '10px' }}>
+        <h4>EFFECT HOOK</h4>
+        <div className="maxHeight">
+          <UseEffectFunction />
+          <UseEffectFunctionRunOnlyOnce />
+          <UseEffectClass />
+        </div>
       </div>
     );
   }
