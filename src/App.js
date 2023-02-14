@@ -6,7 +6,7 @@ import DepthInJSX from './depthInJSX';
 function App() {
   return (
     <div className="App">
-      <header className="App-header" style={{maxHeight: '900px', overflowX: 'auto'}}>
+      <header className="App-header" style={{overflowX: 'auto'}}>
         <HookFunction />
         <DepthInJSX />
       </header>
