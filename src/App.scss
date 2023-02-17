@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -33,6 +32,23 @@ h1, h2, h3, h4, h5, h6, p {
 
 .App-link {
   color: #61dafb;
+}
+
+.App-aside {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 15px 25px;
+  margin-right: 15px;
+  background: navajowhite;
+  text-align: left;
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
 }
 
 @keyframes App-logo-spin {
