@@ -7,6 +7,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import router from './router';
 
+const baseURL = process.env.REACT_APP_BASEURL;
+
+if (!window.location.pathname.includes(baseURL)) {
+  window.history.replaceState('', '', window.location.pathname + baseURL);
+  window.location.reload();
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
