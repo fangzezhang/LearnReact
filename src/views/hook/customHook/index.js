@@ -34,7 +34,7 @@ export default function Index () {
         <p>
           自定义 Hook 是一个函数, 以 "use" 开头, 内部可以调用其他 Hook。
         </p>
-        <button onClick={handleAddClick('text')}>click</button>
+        <button onClick={handleAddClick('text')}>add in store</button>
       </div>
     </div>
   )
