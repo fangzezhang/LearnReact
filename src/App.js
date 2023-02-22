@@ -11,10 +11,10 @@ function App() {
 
   return (
     <div className="App">
+      <AppAside />
       <header className="App-header" style={{overflowX: 'auto'}}>
         {/*<HookFunction />
         <HOCDepthInJSX />*/}
-        <AppAside />
         <Outlet />
       </header>
     </div>

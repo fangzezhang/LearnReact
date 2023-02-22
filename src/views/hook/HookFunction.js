@@ -2,6 +2,7 @@ import React from 'react';
 import UseState from './stateHook';
 import UseEffect from './effectHook';
 import CustomHook from './customHook';
+import ContextHook from './contextHook';
 
 export default function HookFunction() {
   return (
@@ -9,6 +10,7 @@ export default function HookFunction() {
       <UseState />
       <UseEffect />
       <CustomHook />
+      <ContextHook />
     </div>
   );
 }
