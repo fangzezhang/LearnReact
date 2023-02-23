@@ -4,8 +4,7 @@ import UseRefOnComponent from "./UseRefOnComponent";
 
 export default function Index() {
   const componentRef = useRef(null);
-  function handleClick(event) {
-    console.info(event);
+  function handleClick() {
     componentRef.current.focus();
   }
 

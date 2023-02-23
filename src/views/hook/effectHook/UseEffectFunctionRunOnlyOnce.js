@@ -8,14 +8,12 @@ export default function UseEffectFunctionRunOnlyOnce() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    console.info('start');
     const id = setInterval(() => {
       setCount((c) => {
         return c + 1;
       });
     }, 1000);
     return () => {
-      console.info('remove');
       clearInterval(id);
     };
   }, []);
