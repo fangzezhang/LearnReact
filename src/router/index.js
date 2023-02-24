@@ -8,6 +8,7 @@ const baseURL = process.env.REACT_APP_BASEURL;
 
 const HOCDepthInJSX = logProps(DepthInJSX);
 const HookFunction = lazy(() => import(/* webpackChunkName: "HookFunction" */ "@/views/hook/HookFunction.js"));
+const errorElement = <h3>router component get something wrong...</h3>;
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,12 @@ const router = createBrowserRouter([
         index: true,
         path: '/hook',
         element: <HookFunction />,
+        errorElement: errorElement,
       },
       {
         path: '/depthInJSX',
         element: <HOCDepthInJSX />,
+        errorElement: errorElement,
       }
     ]
   },
