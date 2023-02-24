@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function CountFunction(props) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(null);
 
   function handleClick() {
     setCount(count + 1);
@@ -13,10 +13,8 @@ export default function CountFunction(props) {
 
   return (
     <div>
-      <p>Function count: {count}</p>
+      <p>Function count: {count.c.a + 1}</p>
       <button onClick={ () => {
-        handleClick();
-        handleClick();
         handleClick();
         handleClick();
       } }>
