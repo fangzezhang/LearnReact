@@ -6,7 +6,9 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 export default class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      count: 0,
+    };
   }
 
   handleClick(event) {
@@ -24,6 +26,10 @@ export default class Index extends Component {
               <p>组件上无法绑定click, 只能在DOM元素上绑定</p>
               <p>组件上绑定只会被当作 prop 传递</p>
             </CountFunction>
+            <p>parent count: {this.state.count}</p>
+            <button
+              onClick={() => this.setState({count: this.state.count + 1})}
+            >parent click: count +1</button>
           </ErrorBoundary>
         </div>
       </div>

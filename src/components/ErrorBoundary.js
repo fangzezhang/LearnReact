@@ -20,11 +20,6 @@ export default class ErrorBoundary extends Component {
     console.dir(errorInfo);
   }
 
-  componentDidMount() {
-    console.info(this.props.children);
-    console.info(this.state.hasError);
-  }
-
   render() {
     if (this.state.hasError) {
       return <h1 style={{color: 'red'}}>Something went wrong...</h1>
