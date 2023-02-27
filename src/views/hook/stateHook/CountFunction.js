@@ -13,7 +13,8 @@ export default function CountFunction(props) {
 
   return (
     <div>
-      <p>Function count: {count.c.a + 1}</p>
+      {/*<p>UI错误: {count.c.a + 1}</p>*/}
+      <p>Function count: {count}</p>
       <button onClick={ () => {
         handleClick();
         handleClick();
