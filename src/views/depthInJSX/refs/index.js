@@ -37,7 +37,7 @@ export default function Index() {
       <br/>
       {
         initialArray.map((val, index) => {
-          return <Box key={index} ref={(node) => {console.info(node); return refs[index] = node}} />
+          return <Box key={index} ref={(node) => refs[index] = node} />
         })
       }
       <button onClick={() => goToBox(1)}>get index 1 box info</button>

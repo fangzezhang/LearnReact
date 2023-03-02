@@ -15,7 +15,9 @@ function App() {
         {/*<HookFunction />
         <HOCDepthInJSX />*/}
         <AppAside />
-        <Outlet />
+        <React.Suspense>
+          <Outlet />
+        </React.Suspense>
       </header>
     </div>
   );
