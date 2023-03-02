@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: react-web
+    restart: always
+    volumes:
+      - ./conf/nginx:/etc/nginx/conf.d
+    ports:
+      - 10086:80
