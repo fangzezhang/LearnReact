@@ -11,6 +11,16 @@ export default function AppAside() {
         <li>
           <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/depthInJSX">DepthInJSX</NavLink>
         </li>
+        <li>
+          <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/redux">Redux</NavLink>
+          <ul>
+            <li>
+              <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/redux/counter">
+                 Counter
+              </NavLink>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
   );

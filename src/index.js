@@ -6,6 +6,8 @@ import {
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import router from './router';
+import store from "@/store";
+import { Provider } from 'react-redux';
 
 const baseURL = process.env.REACT_APP_BASEURL;
 
@@ -16,10 +18,12 @@ if (!window.location.pathname.includes(baseURL)) {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/*<App />*/}
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      {/*<App />*/}
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
