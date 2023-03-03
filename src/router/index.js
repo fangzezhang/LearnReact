@@ -7,8 +7,10 @@ import { logProps } from "@/util/hoc";
 const baseURL = process.env.REACT_APP_BASEURL;
 
 const HOCDepthInJSX = logProps(DepthInJSX);
-const HookFunction = lazy(() => import(/* webpackChunkName: "HookFunction" */ "@/views/hook/HookFunction.js"));
+const HookFunction = lazy(() => import(/* webpackChunkName: "HookFunction" */ "@/views/hook/HookFunction"));
 const errorElement = <h3>router component get something wrong...</h3>;
+const ReduxFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/features/counter"));
+const CounterFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/features/counter/Counter"));
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,21 @@ const router = createBrowserRouter([
         path: '/depthInJSX',
         element: <HOCDepthInJSX />,
         errorElement: errorElement,
+      },
+      {
+        path: '/redux',
+        element: <Navigate to={'/redux/counter'}/>,
+      },
+      {
+        path: '/redux',
+        element: <ReduxFunction />,
+        children: [
+          {
+            index: true,
+            path: '/redux/counter',
+            element: <CounterFunction />,
+          }
+        ]
       }
     ]
   },
