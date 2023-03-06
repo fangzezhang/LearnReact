@@ -9,8 +9,8 @@ const baseURL = process.env.REACT_APP_BASEURL;
 const HOCDepthInJSX = logProps(DepthInJSX);
 const HookFunction = lazy(() => import(/* webpackChunkName: "HookFunction" */ "@/views/hook/HookFunction"));
 const errorElement = <h3>router component get something wrong...</h3>;
-const ReduxFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/features/counter"));
-const CounterFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/features/counter/Counter"));
+const ReduxFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/views/counter"));
+const CounterFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/views/counter/Counter"));
 
 const router = createBrowserRouter([
   {
