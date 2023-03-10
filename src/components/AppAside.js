@@ -19,6 +19,11 @@ export default function AppAside() {
                  Counter
               </NavLink>
             </li>
+            <li>
+              <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/redux/reduxThunk">
+                Redux Thunk
+              </NavLink>
+            </li>
           </ul>
         </li>
       </ul>

@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import router from './router';
 import store from "@/store";
 import { Provider } from 'react-redux';
+import {fetchUser} from "@/store/postSlice";
 
 const baseURL = process.env.REACT_APP_BASEURL;
 
@@ -15,6 +16,8 @@ if (!window.location.pathname.includes(baseURL)) {
   window.history.replaceState('', '', window.location.pathname + baseURL);
   window.location.reload();
 }
+
+store.dispatch(fetchUser());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
