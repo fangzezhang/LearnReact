@@ -9,7 +9,7 @@ export default function Index() {
   const loading = useSelector((state) => state.post.loading);
 
   function handleFetchUser() {
-    dispatch(fetchUser({info: '666'}))
+    dispatch(fetchUser({id: '666'}))
   }
 
   let content;
