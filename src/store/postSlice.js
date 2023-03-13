@@ -41,9 +41,9 @@ export const postSlice = createSlice({
   }
 });
 
-export const fetchUser = createAsyncThunk('user/fetchUsers', async (info, obj) => {
-  console.info(info);
-  console.info(obj);
+export const fetchUser = createAsyncThunk('user/fetchUsers', async (params, thunkAPI) => {
+  console.info(params);
+  console.info(thunkAPI);
 
   const response = await api.get('/auth');
 
