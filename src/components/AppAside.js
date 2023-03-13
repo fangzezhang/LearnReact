@@ -24,6 +24,11 @@ export default function AppAside() {
                 Redux Thunk
               </NavLink>
             </li>
+            <li>
+              <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/redux/RTK">
+                Redux RTK
+              </NavLink>
+            </li>
           </ul>
         </li>
       </ul>

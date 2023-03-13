@@ -12,6 +12,7 @@ const errorElement = <h3>router component get something wrong...</h3>;
 const ReduxFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/views/counter"));
 const CounterFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/views/counter/Counter"));
 const ReduxThunk = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/reduxThunk"));
+const RTK = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/reduxThunk/Rtk"));
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
           {
             path: '/redux/reduxThunk',
             element: <ReduxThunk />
-          }
+          },
+          {
+            path: '/redux/RTK',
+            element: <RTK />
+          },
         ]
       },
     ]
