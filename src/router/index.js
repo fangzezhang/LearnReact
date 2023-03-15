@@ -45,6 +45,7 @@ const router = createBrowserRouter([
       {
         path: '/redux',
         element: <ReduxFunction />,
+        errorElement: errorElement,
         children: [
           {
             index: true,
