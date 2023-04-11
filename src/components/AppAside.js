@@ -31,6 +31,9 @@ export default function AppAside() {
             </li>
           </ul>
         </li>
+        <li>
+          <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/arrayMethods">ArrayMethods</NavLink>
+        </li>
       </ul>
     </nav>
   );

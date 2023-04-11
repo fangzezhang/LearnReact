@@ -13,6 +13,7 @@ const ReduxFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/
 const CounterFunction = lazy(() => import(/* webpackChunkName: "CounterFunction"*/ "@/views/counter/Counter"));
 const ReduxThunk = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/reduxThunk"));
 const RTK = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/reduxThunk/Rtk"));
+const ArrayMethods = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/arrayMethods"));
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
           },
         ]
       },
+      {
+        path: '/arrayMethods',
+        element: <ArrayMethods />
+      }
     ]
   },
 ], {
