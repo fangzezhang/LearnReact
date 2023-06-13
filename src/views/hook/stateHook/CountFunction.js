@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import KeepAlive, { AliveScope } from '@/components/KeepAlive';
 
 export default function CountFunction(props) {
-  const [count, setCount] = useState(null);
+  const [count, setCount] = useState(0);
 
   function handleClick() {
     setCount(count + 1);

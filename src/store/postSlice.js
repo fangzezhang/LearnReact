@@ -19,6 +19,15 @@ export const postSlice = createSlice({
     increment: (state, action) => {
       state.count += action.payload;
     },
+    receiveUser(state, action) {
+      state.userInfo = action.payload;
+    },
+    requestUser(state) {
+      state.loading = true;
+    },
+    endRequest(state) {
+      state.loading = false;
+    }
   },
   extraReducers(builder) {
     builder
@@ -41,6 +50,7 @@ export const postSlice = createSlice({
   }
 });
 
+// 异步请求的方法一: 通过 createAsyncThunk + extraReducers.builder 实现 ajax + loading
 export const fetchUser = createAsyncThunk('user/fetchUsers', async (params, thunkAPI) => {
   console.info(params);
   console.info(thunkAPI);
@@ -49,6 +59,22 @@ export const fetchUser = createAsyncThunk('user/fetchUsers', async (params, thun
 
   return response.data;
 });
+
+// 异步请求的方法二: 通过中间件实现
+export const reducerFetchUser = (params) => {
+  return async function (dispatch, getState) {
+    dispatch(requestUser());
+
+    try {
+      const response = await api.get('/auth');
+
+      dispatch(receiveUser(response.data));
+      dispatch(endRequest());
+    } catch(e) {
+      dispatch(endRequest());
+    }
+  }
+};
 
 export const thunkFunction = (count) => {
   return (dispatch, getState) => {
@@ -63,6 +89,9 @@ export const thunkFunction = (count) => {
 };
 
 export const {
-  increment
+  increment,
+  receiveUser,
+  requestUser,
+  endRequest,
 } = postSlice.actions;
 export default postSlice.reducer;

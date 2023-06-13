@@ -17,7 +17,7 @@ if (!window.location.pathname.includes(baseURL)) {
   window.location.reload();
 }
 
-store.dispatch(fetchUser({id: 123}));
+// store.dispatch(fetchUser({id: 123}));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

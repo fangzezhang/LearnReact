@@ -1,20 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {fetchUser, thunkFunction} from "@/store/postSlice";
+import {fetchUser, thunkFunction, reducerFetchUser} from "@/store/postSlice";
+import api from '@/api';
 
 export default function Index() {
   const dispatch = useDispatch();
 
-  const userInfo = useSelector((state) => state.post.userInfo);
+  // const userInfo = useSelector((state) => state.post.userInfo);
   const loading = useSelector((state) => state.post.loading);
+  const count = useSelector((state) => state.post.count);
 
-  function handleFetchUser() {
-    dispatch(fetchUser({id: '666'}))
+  // 异步请求的方法三: 组件内进行异步请求
+  const [localLoading, setLocalLoading] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+  async function handleFetchUser() {
+    // dispatch(reducerFetchUser({id: '666'}));
+
+    setLocalLoading(true);
+    const response = await api.get('/auth');
+
+    setUserInfo(response.data);
+    setLocalLoading(false);
   }
 
   let content;
 
-  if (loading) {
+  // if (loading) {
+  if (localLoading) {
     content = <div>loading</div>
   } else {
     content = <div>
@@ -34,6 +46,7 @@ export default function Index() {
       <h4>This page to test Redux Thunk</h4>
       <button onClick={handleFetchUser}>fetch user</button>
       <button onClick={handleIncrement}>increment count</button>
+      <p>count: {count}</p>
       {content}
     </div>
   );
