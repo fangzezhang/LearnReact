@@ -28,6 +28,4 @@ export const rtkSlice = createApi({
   },
 });
 
-console.info(rtkSlice);
-
 export const { useGetUserQuery, usePostUserMutation } = rtkSlice;
