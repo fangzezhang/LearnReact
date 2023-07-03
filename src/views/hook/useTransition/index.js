@@ -16,6 +16,7 @@ export default function Index() {
 
   return (
     <div className="box">
+      {isPending && <p>pending</p>}
       <TabButton
         isActive={tab === 'about'}
         onClick={() => selectTab('about')}

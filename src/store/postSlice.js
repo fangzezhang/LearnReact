@@ -34,11 +34,9 @@ export const postSlice = createSlice({
       .addCase(fetchUser.pending, (state, action) => {
         state.status = 'loading';
         state.loading = true;
-        console.info(action);
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        console.info(action);
         state.loading = false;
         state.userInfo = action.payload;
       })
