@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-export default function Post() {
-  const items = [];
-
+function SlowPost({i}) {
   const startTime = performance.now();
 
-  while (performance.now() - startTime < 1000) {}
+  while (performance.now() - startTime < 1) {}
+
+  return (
+    <li>Post #{i + 1}</li>
+  )
+}
+
+export default memo(function Post() {
+  const items = [];
 
   for (let i = 0; i < 500; i++) {
-    items.push(<li key={i}>Post #{i + 1}</li>);
+    items.push(<SlowPost i key={i} />);
   }
 
   return (
@@ -16,4 +22,4 @@ export default function Post() {
       {items}
     </ul>
   );
-}
+})
