@@ -23,7 +23,7 @@ export default function Index () {
   };
 
   useEffect(() => {
-    console.info(todos);
+    // console.info(todos);
   });
 
   return (

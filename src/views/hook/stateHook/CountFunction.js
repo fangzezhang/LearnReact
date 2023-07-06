@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function CountFunction(props) {
   const [count, setCount] = useState(0);
@@ -8,7 +8,17 @@ export default function CountFunction(props) {
     console.info('setCount 是异步更新, 这里显示的是之前的 count: ' + count);
   }
 
-  console.info('状态更改，重新执行整个函数？');
+  console.info('rendering with count: ' + count);
+
+  useEffect(() => {
+    const handle = setTimeout(() => {
+      console.info('start setting count + 1');
+      setCount(count + 1);
+      console.info('finished setting count');
+    }, 1000);
+
+    return () => clearTimeout(handle);
+  }, []);
 
   return (
     <div>
