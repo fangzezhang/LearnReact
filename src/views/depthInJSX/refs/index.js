@@ -21,8 +21,6 @@ export default function Index() {
   }
 
   function goToBox(index) {
-    console.info(refs[index].current);
-    console.info(refs[index].getYLocation());
   }
 
   return (

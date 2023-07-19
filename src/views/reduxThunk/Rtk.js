@@ -30,7 +30,6 @@ export default function Rtk() {
         age: age,
       }).unwrap();
     } catch (e) {
-      console.info(e);
     }
   };
 

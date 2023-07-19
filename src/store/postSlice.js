@@ -50,9 +50,6 @@ export const postSlice = createSlice({
 
 // 异步请求的方法一: 通过 createAsyncThunk + extraReducers.builder 实现 ajax + loading
 export const fetchUser = createAsyncThunk('user/fetchUsers', async (params, thunkAPI) => {
-  console.info(params);
-  console.info(thunkAPI);
-
   const response = await api.get('/auth');
 
   return response.data;

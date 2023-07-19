@@ -6,7 +6,6 @@ export default function UseRefInsideComponent() {
 
   function handleClick() {
     textRef.current.focus();
-    console.info(cbRef);
   }
 
   function refCallback(e) {

@@ -16,9 +16,6 @@ function todosReducer(state, action) {
 export default function Index () {
   const [todos, dispatch] = useCustomReducer(todosReducer, []);
   const handleAddClick = (params) => (event) => {
-    console.info(params);
-    console.info(event);
-
     dispatch({type: 'add', text: params});
   };
 

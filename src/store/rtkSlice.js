@@ -9,7 +9,6 @@ export const rtkSlice = createApi({
     return {
       getUser: builder.query({
         query: (id) => {
-          console.info(id);
           return `/auth/${id}`;
         },
         providesTags: ['Post'],

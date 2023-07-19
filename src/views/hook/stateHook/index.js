@@ -12,7 +12,6 @@ export default class Index extends Component {
   }
 
   handleClick(event) {
-    console.info(event);
   }
 
   render() {

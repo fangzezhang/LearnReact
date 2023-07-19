@@ -12,15 +12,11 @@ export default function Counter() {
   function incrementHandle() {  // 多个 dispatch 只会执行一次
     let a = dispatch(increment());
     dispatch(setName('zhang san'));
-    console.info(a);
-    console.info(count);
   }
 
   function jumpTo() {
     navigate('/hook');
   }
-
-  console.info('render');
 
   return (
     <div>
