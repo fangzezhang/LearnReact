@@ -3,7 +3,6 @@ import React from "react";
 export function logProps(Component) {
   class LogProps extends React.Component {
     componentDidMount() {
-      console.info('HOC lifecycle componentDidMount');
     }
 
     render() {

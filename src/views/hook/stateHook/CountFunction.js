@@ -8,13 +8,9 @@ export default function CountFunction(props) {
     console.info('setCount 是异步更新, 这里显示的是之前的 count: ' + count);
   }
 
-  console.info('rendering with count: ' + count);
-
   useEffect(() => {
     const handle = setTimeout(() => {
-      console.info('start setting count + 1');
       setCount(count + 1);
-      console.info('finished setting count');
     }, 1000);
 
     return () => clearTimeout(handle);

@@ -9,9 +9,6 @@ export default function CopyWithin() {
       draft.copyWithin(1, 2);
     });
   }
-  useEffect(() => {
-    console.info(array);
-  }, [array]);
 
   return (
     <>
