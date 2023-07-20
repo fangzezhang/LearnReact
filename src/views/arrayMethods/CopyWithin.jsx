@@ -1,8 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { useImmer } from "use-immer";
 
-export default function CopyWithin() {
+/*
+* React StrictMode 在开发服务器上渲染组件两次
+* */
+export default memo(function CopyWithin() {
   const [array, setArray] = useImmer([1,2,3,4]);
+
+  useEffect(() => {
+    console.info(0);
+  });
+  useEffect(() => {
+    console.info(1);
+  }, []);
+  useEffect(() => {
+    console.info(2);
+
+    return () => {};
+  }, []);
 
   function handleClick() {
     setArray(draft => {
@@ -18,4 +33,4 @@ export default function CopyWithin() {
       <button onClick={handleClick}>click</button>
     </>
   );
-}
+})
