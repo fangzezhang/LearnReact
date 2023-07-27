@@ -5,6 +5,7 @@ import './App.scss';
 // import { logProps } from "./util/hoc";
 import AppAside from "@/components/AppAside";
 import { Outlet } from 'react-router-dom';
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 function App() {
   // const HOCDepthInJSX = logProps(DepthInJSX);
@@ -16,7 +17,9 @@ function App() {
         <HOCDepthInJSX />*/}
         <AppAside />
         <React.Suspense>
-          <Outlet />
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </React.Suspense>
       </header>
     </div>
