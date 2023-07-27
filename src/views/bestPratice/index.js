@@ -3,6 +3,7 @@ import DeclareCSSOutside from "@/views/bestPratice/DeclareCSSOutside";
 import UsecallbackPreventFunctionRebuild from "@/views/bestPratice/UsecallbackPreventFunctionRebuild";
 import DeclareComponentOutside from "@/views/bestPratice/DeclareComponentOutside";
 import UseReducerReplaceUseState from "@/views/bestPratice/UseReducerReplaceUseState";
+import UseRefReplaceUseState from "@/views/bestPratice/UseRefReplaceUseState";
 
 export default function Index() {
 
@@ -14,6 +15,7 @@ export default function Index() {
       2: <UsecallbackPreventFunctionRebuild/>
       3: <DeclareComponentOutside/>
       4: <UseReducerReplaceUseState/>
+      5: <UseRefReplaceUseState/>
     </div>
   );
 }
