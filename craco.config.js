@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: './',
   webpack: {
     alias: {
       '@': path.join(__dirname, '/src'),

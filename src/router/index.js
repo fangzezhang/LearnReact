@@ -15,6 +15,7 @@ const ReduxThunk = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/view
 const RTK = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/reduxThunk/Rtk"));
 const ArrayMethods = lazy(() => import(/* webpackChunkName: "ReduxThunk"*/ "@/views/arrayMethods"));
 const TransitionHook = lazy(() => import(/* webpackChunkName: "TransitionHook"*/ "@/views/hook/useTransition"));
+const BestPratice = lazy(() => import(/* webpackChunkName: "TransitionHook"*/ "@/views/bestPratice"));
 
 const router = createBrowserRouter([
   {
@@ -72,7 +73,11 @@ const router = createBrowserRouter([
       {
         path: '/arrayMethods',
         element: <ArrayMethods />
-      }
+      },
+      {
+        path: '/bestPratice',
+        element: <BestPratice />
+      },
     ]
   },
 ], {
