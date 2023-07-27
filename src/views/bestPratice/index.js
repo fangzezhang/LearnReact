@@ -1,6 +1,7 @@
 import React from 'react';
 import DeclareCSSOutside from "@/views/bestPratice/DeclareCSSOutside";
 import UsecallbackPreventFunctionRebuild from "@/views/bestPratice/UsecallbackPreventFunctionRebuild";
+import DeclareComponentOutside from "@/views/bestPratice/DeclareComponentOutside";
 
 export default function Index() {
 
@@ -10,6 +11,7 @@ export default function Index() {
       <hr/>
       <DeclareCSSOutside/>
       <UsecallbackPreventFunctionRebuild/>
+      <DeclareComponentOutside/>
     </div>
   );
 }
