@@ -7,18 +7,6 @@ import { useImmer } from "use-immer";
 export default memo(function CopyWithin() {
   const [array, setArray] = useImmer([1,2,3,4]);
 
-  useEffect(() => {
-    console.info(0);
-  });
-  useEffect(() => {
-    console.info(1);
-  }, []);
-  useEffect(() => {
-    console.info(2);
-
-    return () => {};
-  }, []);
-
   function handleClick() {
     setArray(draft => {
       draft.copyWithin(1, 2);
