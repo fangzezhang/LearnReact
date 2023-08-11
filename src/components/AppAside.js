@@ -12,6 +12,9 @@ export default function AppAside() {
           <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/bestPratice">最佳实践</NavLink>
         </li>
         <li>
+          <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/video">Video</NavLink>
+        </li>
+        <li>
           <NavLink className={`App-link ${({ isActive }) => isActive ? 'active' : undefined}`} to="/depthInJSX">DepthInJSX</NavLink>
         </li>
         <li>
