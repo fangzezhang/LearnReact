@@ -9,17 +9,14 @@ export default function CountFunction(props) {
 
   function handleClick() {
     a = a + 1;
-    setCount(count + 1);
-    console.info('setCount 是异步更新, 这里显示的是之前的 count: ' + count);
-  }
+    console.info(count);
+    setCount(count + 1);  // 请求使用 1 重新渲染
+    console.info('setCount 是异步更新, 这里显示的是之前的 count: ' + count); // 仍然是 0!
 
-  useEffect(() => {
-    const handle = setTimeout(() => {
-      setCount(count + 1);
+    setTimeout(() => {
+      console.log(count); // 还是 0!
     }, 1000);
-
-    return () => clearTimeout(handle);
-  }, []);
+  }
 
   return (
     <div>
