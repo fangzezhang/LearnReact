@@ -1,5 +1,41 @@
 import React, {useState, useEffect} from 'react';
 
+function EffectRender({list}) {
+  const [selection, setSelection] = useState(null);
+
+  /*
+  * list 发生改变, 导致重新渲染, 然后执行 effect
+  * 这里先输出之前的 selection;
+  * 然后再输出 null
+  * 由于严格模式下会执行两次, 所以会输出四次。
+  * */
+
+  /*
+  * 验证步骤:
+  * 1. 点击 li
+  * 2. 点击“改变 list” 按钮, 更改 list
+  * 3. 查看 console 输出:
+  *   先输出之前的选择,
+  *   然后输出 null。
+  * */
+  console.info(selection);
+
+  useEffect(() => {
+    setSelection(null);
+  }, [list]);
+
+  return (
+    <div>
+      {selection}
+      <ul>
+        {
+          list.map((val, i) => <li key={i} onClick={() => setSelection(val)}>{val}</li>)
+        }
+      </ul>
+    </div>
+  )
+}
+
 export default function PropsChangeEffectRender() {
   /* 理论:
   * 依赖的 state 发生变化会导致组件的重新渲染,
@@ -13,33 +49,6 @@ export default function PropsChangeEffectRender() {
   * list 改变, 重置 selection;
   * 查看页面是否会闪烁。
   * */
-
-  const EffectRender = function ({list}) {
-    const [selection, setSelection] = useState(null);
-
-    /*
-    * list 发生改变, 导致重新渲染, 然后执行 effect
-    * 这里先输出之前的 selection;
-    * 然后再输出 null
-    * 由于严格模式下会执行两次, 所以会输出四次。
-    * */
-    console.info(selection);
-
-    useEffect(() => {
-      setSelection(null);
-    }, [list]);
-
-    return (
-      <div>
-        {selection}
-        <ul>
-          {
-            list.map((val, i) => <li key={i} onClick={() => setSelection(val)}>{val}</li>)
-          }
-        </ul>
-      </div>
-    )
-  };
 
   const [list, setList] = useState(['1', '2', '3', '4']);
 
